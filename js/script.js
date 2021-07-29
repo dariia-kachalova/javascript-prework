@@ -1,3 +1,21 @@
+var buttonRock, buttonPaper, buttonScissors;
+
+buttonRock = document.getElementById('button-rock');
+buttonRock.addEventListener('click', function(){ buttonClicked('button kamień'); });
+
+buttonPaper = document.getElementById('button-paper');
+buttonPaper.addEventListener('click', function(){ buttonClicked('button papier'); });
+
+buttonScissors = document.getElementById('button-scissors');
+buttonScissors.addEventListener('click', function(){ buttonClicked('button nożyce'); });
+
+
+function buttonClicked(argButtonName) {
+  clearMessages();
+  console.log(argButtonName + ' został kliknięty');
+}
+
+
 function getMoveName(argMoveId){
     if(argMoveId == 1){
       return 'kamień';
@@ -38,3 +56,5 @@ function getMoveName(argMoveId){
     }
   }
 }
+buttonTest.addEventListener('click', function(){
+    buttonClicked('Test button')
