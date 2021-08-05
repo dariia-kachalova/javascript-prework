@@ -4,13 +4,9 @@ buttonRock = document.getElementById('button-rock');
 buttonPaper = document.getElementById('button-paper');
 buttonScissors = document.getElementById('button-scissors');
 
-
-
 function buttonClicked(argButtonName) {
   clearMessages();
   console.log(argButtonName + ' został kliknięty');
-}
-
 
 function getMoveName(argMoveId){
     if(argMoveId == 1){
@@ -21,7 +17,7 @@ function getMoveName(argMoveId){
       return 'nożyce';
     } printMessage('Nie znam ruchu o id' + argMoveId + '.');
     return 'Nieznany ruch';
-  }
+    }
 
   function displayResult(argComputerMove, argPlayerMove){
   const displayResult = function(argComputerMove, argPlayerMove){
@@ -50,8 +46,10 @@ function getMoveName(argMoveId){
     } else if(argComputerMove == 'nożyce' && argPlayerMove == 'Nieznany ruch'){
     printMessage('Wybierz od 1 do 3!');
     }
-  };
+    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+    }
+  }
 }
-buttonRock.addEventListener('click', function(){ buttonClicked('button kamień'); });
-buttonPaper.addEventListener('click', function(){ buttonClicked('button papier'); });
-buttonScissors.addEventListener('click', function(){ buttonClicked('button nożyce'); });
+buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
+buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
+buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
