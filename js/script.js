@@ -19,24 +19,23 @@ function getMoveName(argMoveId){
     return 'Nieznany ruch';
     }
 
-  function displayResult(argComputerMove, argPlayerMove){
   const displayResult = function(argComputerMove, argPlayerMove){
     if(argComputerMove == 'kamień' && argPlayerMove == 'papier'){
       printMessage('Wygrywasz');
     } else if(argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
-      printMessage('remis');
+      printMessage('Remis');
     } else if(argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
     printMessage('Przegrywasz!');
     } else if(argComputerMove == 'papier' && argPlayerMove == 'kamień'){
     printMessage('Przegrywasz!');
     } else if(argComputerMove == 'papier' && argPlayerMove == 'papier'){
-    printMessage('remis');
+    printMessage('Remis');
     } else if(argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
     printMessage('Wygrywasz');
     } else if(argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
     printMessage('Wygrywasz');
     } else if(argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
-    printMessage('remis');
+    printMessage('Remis');
     } else if(argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
     printMessage('Przegrywasz!');
     } else if(argComputerMove == 'kamień' && argPlayerMove == 'Nieznany ruch'){
@@ -47,9 +46,15 @@ function getMoveName(argMoveId){
     printMessage('Wybierz od 1 do 3!');
     }
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
-    }
-  }
+    };
+  playerMove = argButtonName;
+  console.log('ruch gracza to: ' + playerMove);
+  randomNumber = Math.floor(Math.random() * 3 + 1);
+  console.log('wylosowana liczba to: ' + randomNumber);
+  computerMove = getMoveName(randomNumber);
+  console.log('ruch komputera to: ' + computerMove);
+  displayResult(playerMove, computerMove);
 }
-buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
-buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
+buttonRock.addEventListener('click', function(){ buttonClicked('kamień');});
+buttonPaper.addEventListener('click', function(){ buttonClicked('papier');});
 buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
