@@ -1,8 +1,6 @@
-const buttonRock, buttonPaper, buttonScissors;
-
-buttonRock = document.getElementById('button-rock');
-buttonPaper = document.getElementById('button-paper');
-buttonScissors = document.getElementById('button-scissors');
+const buttonRock = document.getElementById('button-rock');
+const buttonPaper = document.getElementById('button-paper');
+const buttonScissors = document.getElementById('button-scissors');
 
 function buttonClicked(argButtonName) {
   clearMessages();
@@ -16,7 +14,7 @@ function getMoveName(argMoveId){
     } else if(argMoveId == 3){
       return 'nożyce';
     } printMessage('Nie znam ruchu o id' + argMoveId + '.');
-    return 'Nieznany ruch';
+      return 'Nieznany ruch';
     }
 
   const displayResult = function(argComputerMove, argPlayerMove){
@@ -25,27 +23,27 @@ function getMoveName(argMoveId){
     } else if(argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
       printMessage('Remis');
     } else if(argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
-    printMessage('Przegrywasz!');
+      printMessage('Przegrywasz!');
     } else if(argComputerMove == 'papier' && argPlayerMove == 'kamień'){
-    printMessage('Przegrywasz!');
+      printMessage('Przegrywasz!');
     } else if(argComputerMove == 'papier' && argPlayerMove == 'papier'){
-    printMessage('Remis');
+      printMessage('Remis');
     } else if(argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
-    printMessage('Wygrywasz');
+      printMessage('Wygrywasz');
     } else if(argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
-    printMessage('Wygrywasz');
+      printMessage('Wygrywasz');
     } else if(argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
-    printMessage('Remis');
+      printMessage('Remis');
     } else if(argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
-    printMessage('Przegrywasz!');
+      printMessage('Przegrywasz!');
     } else if(argComputerMove == 'kamień' && argPlayerMove == 'Nieznany ruch'){
-    printMessage('Wybierz od 1 do 3');
+      printMessage('Wybierz od 1 do 3');
     } else if(argComputerMove == 'papier' && argPlayerMove == 'Nieznany ruch'){
-    printMessage('Wybierz od 1 do 3!');
+      printMessage('Wybierz od 1 do 3!');
     } else if(argComputerMove == 'nożyce' && argPlayerMove == 'Nieznany ruch'){
-    printMessage('Wybierz od 1 do 3!');
+      printMessage('Wybierz od 1 do 3!');
     }
-    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+      printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
     };
   playerMove = argButtonName;
   console.log('ruch gracza to: ' + playerMove);
